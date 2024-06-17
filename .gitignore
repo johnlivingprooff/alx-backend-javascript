@@ -1,2 +1,6 @@
 main.js
 node_modules/
+package.json
+babel.config.js
+.eslintrc.js
+database.csv
