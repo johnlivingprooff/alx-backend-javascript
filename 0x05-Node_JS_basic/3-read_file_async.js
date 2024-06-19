@@ -1,8 +1,8 @@
 const fs = require('fs');
 
-function countStudents(path) {
+async function countStudents(path) {
   try {
-    const data = fs.readFileSync(path, 'utf-8');
+    const data = await fs.readFileSync(path, 'utf-8');
     const lines = data.trim().split('\n').filter((line) => line !== '');
 
     if (lines.length <= 1) {
@@ -13,8 +13,8 @@ function countStudents(path) {
     const students = lines.slice(1).map((line) => line.split(','));
 
     const fieldIndex = headers.indexOf('field');
-    if (fieldIndex === -1) {
-      throw new Error('Cannot load the database');
+    if (!fieldIndex) {
+      throw new Error('Cannot load the datatabase');
     }
 
     const fieldCounts = {};
