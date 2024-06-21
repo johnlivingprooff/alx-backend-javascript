@@ -1,6 +1,6 @@
 main.js
 node_modules/
-package.json
+# package.json
 babel.config.js
 .eslintrc.js
 database.csv
